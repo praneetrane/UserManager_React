@@ -13,12 +13,12 @@ function App() {
   };
 
   return (
-    <div>
+    <React.Fragment>
       {/* Add User */}
       <AddUser onAddUser={addUserHandler} />
       {/* Users List */}
       <UsersList users={usersList} />
-    </div>
+    </React.Fragment>
   );
 }
 

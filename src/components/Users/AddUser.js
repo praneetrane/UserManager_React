@@ -55,8 +55,16 @@ const AddUser = (props) => {
     setError(null);
   };
   return (
+    //Instead of our created <Wrapper/> component. We can user React built-in Fragment i.e.<React.Fragment></React.Fragment>  or <></>
+    //Note that <> </> is based on your project setup hence may not work everywhere whereas fragment would work.
     <Wrapper>
-      {error && <ErrorModal title={error.title} message={error.message}  onConfirm={errorHandler}/>}
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={errorHandler}
+        />
+      )}
       <Card className={styles.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
@@ -74,7 +82,6 @@ const AddUser = (props) => {
             type="number"
             onChange={ageChangedHandler}
           />
-
           <Button type="submit">Add User</Button>
         </form>
       </Card>
